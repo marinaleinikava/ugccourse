@@ -1,0 +1,429 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC Lab — Сценарии курса</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Segoe UI, sans-serif; background: #0f0f1a; color: #fff; }
+.header { background: linear-gradient(135deg, #ff6ec7 0%, #a855f7 50%, #6366f1 100%); padding: 60px 40px; text-align: center; }
+.header-badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; padding: 8px 24px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.header h1 { font-size: 42px; font-weight: 900; margin-bottom: 12px; }
+.header p { font-size: 17px; opacity: 0.85; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+.nav { display: flex; justify-content: center; gap: 12px; padding: 32px 40px; background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+.nav-btn { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; padding: 10px 24px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); cursor: pointer; transition: all 0.2s; text-decoration: none; }
+.nav-btn:hover { background: rgba(255,110,199,0.2); border-color: rgba(255,110,199,0.4); color: #fff; }
+.container { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
+.lesson { margin-bottom: 80px; }
+.lesson-header { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.lesson-number { width: 56px; height: 56px; min-width: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; }
+.lesson-1 .lesson-number { background: linear-gradient(135deg, #ff6ec7, #f97316); }
+.lesson-2 .lesson-number { background: linear-gradient(135deg, #a855f7, #6366f1); }
+.lesson-3 .lesson-number { background: linear-gradient(135deg, #06b6d4, #3b82f6); }
+.lesson-meta h2 { font-size: 26px; font-weight: 900; margin-bottom: 4px; }
+.lesson-meta .speaker { font-size: 14px; color: rgba(255,255,255,0.5); }
+.speaker-badge { display: inline-block; background: rgba(255,255,255,0.08); border-radius: 50px; padding: 4px 14px; font-size: 13px; margin-top: 6px; }
+.block { margin-bottom: 24px; border-radius: 20px; overflow: hidden; }
+.block-header { padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+.block-header .block-icon { font-size: 18px; }
+.block-header .block-title { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.block-header .block-time { margin-left: auto; font-size: 12px; font-weight: 600; background: rgba(255,255,255,0.15); border-radius: 50px; padding: 3px 12px; }
+.block-body { padding: 24px; background: rgba(255,255,255,0.03); }
+.block-body p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 12px; }
+.block-body p:last-child { margin-bottom: 0; }
+.block-body em { color: #ff6ec7; font-style: italic; }
+.block-body strong { color: #fff; }
+.b-intro .block-header { background: linear-gradient(135deg, rgba(255,110,199,0.3), rgba(168,85,247,0.3)); }
+.b-content .block-header { background: rgba(99,102,241,0.25); }
+.b-pain .block-header { background: rgba(239,68,68,0.2); }
+.b-ugclab .block-header { background: rgba(16,185,129,0.2); }
+.b-final .block-header { background: linear-gradient(135deg, rgba(255,110,199,0.25), rgba(168,85,247,0.25)); }
+.pain-quote { background: rgba(239,68,68,0.08); border-left: 3px solid #ef4444; border-radius: 0 12px 12px 0; padding: 14px 20px; margin: 12px 0; font-size: 15px; color: rgba(255,255,255,0.8); font-style: italic; }
+.pain-close { background: rgba(16,185,129,0.08); border-left: 3px solid #10b981; border-radius: 0 12px 12px 0; padding: 14px 20px; margin: 12px 0; font-size: 15px; color: rgba(255,255,255,0.8); }
+.tips-list { list-style: none; margin: 12px 0; }
+.tips-list li { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+.tips-list li:last-child { border-bottom: none; }
+.tips-list li::before { content: "→"; color: #a855f7; font-weight: 700; flex-shrink: 0; }
+.ugclab-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+.ugclab-feature { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px; }
+.ugclab-feature .feat-icon { font-size: 20px; margin-bottom: 8px; display: block; }
+.ugclab-feature .feat-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.ugclab-feature .feat-desc { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+.divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); margin: 60px 0; }
+.pains-summary { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px; margin-bottom: 60px; }
+.pains-summary h3 { font-size: 18px; font-weight: 800; margin-bottom: 20px; color: #ff6ec7; }
+.pains-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.pain-item { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 12px; padding: 14px 16px; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+.pain-item strong { color: #fff; display: block; margin-bottom: 4px; font-size: 13px; }
+.footer { padding: 40px; text-align: center; color: rgba(255,255,255,0.25); font-size: 13px; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer strong { color: rgba(255,255,255,0.5); }
+@media (max-width: 700px) {
+  .ugclab-features { grid-template-columns: 1fr; }
+  .pains-grid { grid-template-columns: 1fr; }
+  .header h1 { font-size: 28px; }
+  .container { padding: 40px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">UGC Lab · Tashe Professional</div>
+  <h1>Сценарии обучающего курса</h1>
+  <p>Обновлённые сценарии с фокусом на репозиционирование, закрытие болей и интеграцию UGC Lab</p>
+</div>
+
+<div class="nav">
+  <a href="#pains" class="nav-btn">Боли аудитории</a>
+  <a href="#lesson1" class="nav-btn">Урок 1 — Кристина</a>
+  <a href="#lesson2" class="nav-btn">Урок 2 — Аня</a>
+  <a href="#lesson3" class="nav-btn">Урок 3 — Маша</a>
+</div>
+
+<div class="container">
+
+<div id="pains" class="pains-summary">
+  <h3>Боли аудитории из кастдэвов — закрываем в каждом уроке</h3>
+  <div class="pains-grid">
+    <div class="pain-item"><strong>Снять и снова не залететь</strong>Страх потратить время и усилия без результата</div>
+    <div class="pain-item"><strong>Не знаю почему не залетело</strong>Непонимание алгоритмов и механик платформы</div>
+    <div class="pain-item"><strong>Нет первого кейса</strong>Без портфолио сложно выйти на бренды</div>
+    <div class="pain-item"><strong>Остаться без поддержки</strong>Страх быть одной на один с провалом</div>
+    <div class="pain-item"><strong>Выгорание в паузе</strong>Не знает что делать после публикации пока ждёт результат</div>
+    <div class="pain-item"><strong>Усилия без результата</strong>Ощущение что прогресса нет и не будет</div>
+  </div>
+</div>
+
+<!-- УРОК 1 -->
+<div id="lesson1" class="lesson lesson-1">
+  <div class="lesson-header">
+    <div class="lesson-number">1</div>
+    <div class="lesson-meta">
+      <h2>Секреты TikTok-площадки</h2>
+      <div class="speaker">Спикер</div>
+      <div class="speaker-badge">👩‍💻 Кристина — TikTok-креатор Tashe, 3+ года</div>
+    </div>
+  </div>
+
+  <div class="block b-intro">
+    <div class="block-header">
+      <span class="block-icon">🎬</span>
+      <span class="block-title">Вступление</span>
+      <span class="block-time">20–30 сек</span>
+    </div>
+    <div class="block-body">
+      <p>Привет! Меня зовут Кристина — я создаю TikTok-контент для бренда Tashe уже больше 3 лет. За это время я прошла всё: от роликов, которые никто не смотрел, до видео с миллионами просмотров.</p>
+      <div class="pain-quote">"Стараешься, снимаешь, публикуешь — и тишина. И первая мысль: наверное, дело во мне."</div>
+      <div class="pain-close">Но дело было не во мне. Дело было в том, что я не знала правил игры. Сегодня я расскажу тебе эти правила.</div>
+    </div>
+  </div>
+
+  <div class="block b-content">
+    <div class="block-header">
+      <span class="block-icon">📱</span>
+      <span class="block-title">Блок 1 — Почему TikTok</span>
+    </div>
+    <div class="block-body">
+      <p>TikTok — единственная платформа, где видео с нулевого аккаунта может набрать миллион просмотров уже завтра. Алгоритм не смотрит на количество подписчиков — он смотрит на качество контента.</p>
+      <p>Именно поэтому бренды — и Tashe в том числе — активно ищут здесь новых авторов. UGC-креатор сегодня — это востребованная профессия. И UGC Lab — это твоя мягкая точка входа в неё. Твой первый реальный кейс с крупным брендом, который открывает двери в профессиональную систему.</p>
+    </div>
+  </div>
+
+  <div class="block b-pain">
+    <div class="block-header">
+      <span class="block-icon">💪</span>
+      <span class="block-title">Блок 2 — Хейт и провал</span>
+    </div>
+    <div class="block-body">
+      <p>Про то, чего все боятся — снять и снова не залететь. Это случится. И это нормально. Даже у меня выходят видео на 300 просмотров — после роликов на миллион.</p>
+      <p>Разница между теми кто растёт и теми кто бросает — не в таланте. В том, что они не останавливаются после провала.</p>
+      <p>Про хейт — он будет, и бояться его не стоит. Хейт означает одно: твоё видео смотрят. Алгоритм не различает добрые и злые комментарии — он видит активность и продвигает видео дальше.</p>
+      <p><strong>Главное правило:</strong> не удаляй видео из-за негатива или низких просмотров. Каждое видео — это данные.</p>
+      <p>А если совсем непонятно что пошло не так — для этого в UGC Lab есть чат креаторов. Там живые люди которые прошли через то же самое и помогут разобрать конкретно твоё видео.</p>
+    </div>
+  </div>
+
+  <div class="block b-content">
+    <div class="block-header">
+      <span class="block-icon">🎯</span>
+      <span class="block-title">Блок 3 — Триггеры</span>
+    </div>
+    <div class="block-body">
+      <p>Триггеры — то, что заставляет человека остановить палец. Три главных которые работают всегда:</p>
+      <ul class="tips-list">
+        <li>Неожиданное начало — первые 2 секунды должны удивить</li>
+        <li>Незакрытый вопрос — задай вопрос в начале, ответ дай в конце</li>
+        <li>Личная история — <em>"я тоже была на твоём месте"</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block b-final">
+    <div class="block-header">
+      <span class="block-icon">🚀</span>
+      <span class="block-title">Финал — переход к UGC Lab</span>
+      <span class="block-time">20–30 сек</span>
+    </div>
+    <div class="block-body">
+      <p>После этого курса ты не останешься один на один с вопросом <em>"что дальше?"</em></p>
+      <p>В Контент Лаб тебя ждёт:</p>
+      <div class="ugclab-features">
+        <div class="ugclab-feature">
+          <span class="feat-icon">🤝</span>
+          <div class="feat-title">Закрытый чат</div>
+          <div class="feat-desc">Поддержка в любой момент, особенно когда видео не залетело</div>
+        </div>
+        <div class="ugclab-feature">
+          <span class="feat-icon">📲</span>
+          <div class="feat-title">ТГ-канал</div>
+          <div class="feat-desc">Актуальные тренды и подсказки каждую неделю</div>
+        </div>
+        <div class="ugclab-feature">
+          <span class="feat-icon">🎮</span>
+          <div class="feat-title">Задания в боте</div>
+          <div class="feat-desc">Конкретные шаги и реальные продукты Tashe в награду</div>
+        </div>
+      </div>
+      <p style="margin-top:16px">Ты уже сделала первый шаг. Переходи ко второму уроку!</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- УРОК 2 -->
+<div id="lesson2" class="lesson lesson-2">
+  <div class="lesson-header">
+    <div class="lesson-number">2</div>
+    <div class="lesson-meta">
+      <h2>Как создавать вирусные видео</h2>
+      <div class="speaker">Спикер</div>
+      <div class="speaker-badge">👩‍💻 Аня / AnkaCasablanca — TikTok-блогер</div>
+    </div>
+  </div>
+
+  <div class="block b-intro">
+    <div class="block-header">
+      <span class="block-icon">🎬</span>
+      <span class="block-title">Вступление</span>
+      <span class="block-time">20–30 сек</span>
+    </div>
+    <div class="block-body">
+      <p>Привет, я Аня — в TikTok меня знают как AnkaCasablanca.</p>
+      <div class="pain-quote">"Знаешь что было самым тяжёлым на старте? Не съёмка. Не монтаж. А ожидание после публикации. Видео вышло, сделать уже ничего нельзя — и ты просто смотришь в статистику."</div>
+      <div class="pain-close">Это невыносимо, когда не понимаешь почему одно видео залетело, а другое нет. Сегодня я дам тебе инструменты, которые помогут твоему видео стать вирусным.</div>
+    </div>
+  </div>
+
+  <div class="block b-content">
+    <div class="block-header">
+      <span class="block-icon">⚡</span>
+      <span class="block-title">Блок 1 — Первые 2 секунды</span>
+    </div>
+    <div class="block-body">
+      <p>Главный секрет — первые 2 секунды решают всё. Именно столько у тебя есть чтобы человек не пролистнул.</p>
+      <ul class="tips-list">
+        <li>Начни с действия, а не с приветствия</li>
+        <li>Покажи результат в самом начале — <em>"вот что будет в конце"</em></li>
+        <li>Используй текст на экране с интригой — <em>"я не верила что это сработает"</em></li>
+      </ul>
+      <div class="pain-quote">Никогда не начинай со слов "Привет, меня зовут..." — это моментальный скролл.</div>
+    </div>
+  </div>
+
+  <div class="block b-content">
+    <div class="block-header">
+      <span class="block-icon">👁</span>
+      <span class="block-title">Блок 2 — Удержание внимания</span>
+    </div>
+    <div class="block-body">
+      <p>Зацепить — половина дела. Важно удержать до конца. Три способа которые работают:</p>
+      <ul class="tips-list">
+        <li><strong>Смена кадров каждые 2-3 секунды</strong> — монотонный план убивает внимание</li>
+        <li><strong>Субтитры</strong> — многие смотрят без звука, без субтитров просто пролистывают</li>
+        <li><strong>Обещание в начале</strong> — <em>"в конце покажу главный лайфхак"</em> — и обязательно выполни его</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block b-ugclab">
+    <div class="block-header">
+      <span class="block-icon">🔍</span>
+      <span class="block-title">Блок 3 — Свой формат на миллион</span>
+    </div>
+    <div class="block-body">
+      <p>Как найти свой формат? Не копируй — адаптируй.</p>
+      <p>Найди 5 вирусных видео в своей нише, выпиши что у них общего: структура, темп, подача. Возьми эту структуру и наполни своим содержанием.</p>
+      <div class="pain-close">Это не теория — это конкретное задание которое есть в боте UGC Lab. Ты делаешь разбор, получаешь Тиктокены, и сразу видишь прогресс. Усилия не уходят в пустоту — каждый шаг приближает к результату.</div>
+    </div>
+  </div>
+
+  <div class="block b-final">
+    <div class="block-header">
+      <span class="block-icon">🚀</span>
+      <span class="block-title">Финал — переход к UGC Lab</span>
+      <span class="block-time">20–30 сек</span>
+    </div>
+    <div class="block-body">
+      <div class="pain-quote">"Самый частый страх, с которым я тоже сталкивалась: потрачу время — и снова ничего не получу."</div>
+      <p>С Контент Лаб этого не будет — потому что даже если видео не залетело, ты получишь:</p>
+      <div class="ugclab-features">
+        <div class="ugclab-feature">
+          <span class="feat-icon">🤝</span>
+          <div class="feat-title">Разбор в чате</div>
+          <div class="feat-desc">Там поддержат, не осудят и помогут понять что улучшить</div>
+        </div>
+        <div class="ugclab-feature">
+          <span class="feat-icon">🎮</span>
+          <div class="feat-title">Прогресс в боте</div>
+          <div class="feat-desc">Каждый шаг засчитывается — Тиктокены, задания, рост</div>
+        </div>
+        <div class="ugclab-feature">
+          <span class="feat-icon">📲</span>
+          <div class="feat-title">Тренды в ТГ</div>
+          <div class="feat-desc">Актуальные форматы каждую неделю для следующего видео</div>
+        </div>
+      </div>
+      <p style="margin-top:16px">Переходи к третьему уроку — там Маша расскажет про визуал!</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- УРОК 3 -->
+<div id="lesson3" class="lesson lesson-3">
+  <div class="lesson-header">
+    <div class="lesson-number">3</div>
+    <div class="lesson-meta">
+      <h2>Визуал — сейчас наше всё</h2>
+      <div class="speaker">Спикер</div>
+      <div class="speaker-badge">👩‍💻 Маша — креатор Flario Group</div>
+    </div>
+  </div>
+
+  <div class="block b-intro">
+    <div class="block-header">
+      <span class="block-icon">🎬</span>
+      <span class="block-title">Вступление</span>
+      <span class="block-time">20–30 сек</span>
+    </div>
+    <div class="block-body">
+      <p>Привет! Я Маша — креатор Flario Group и, как говорят коллеги, повелительница идеального света 😊</p>
+      <div class="pain-quote">"Большинство начинающих креаторов бросают не потому что не умеют снимать. А потому что не знают что делать после провала. Видео не залетело — и кажется что виновата ты сама, а не алгоритмы или недостаток опыта."</div>
+      <div class="pain-close">Сегодня я покажу тебе конкретные вещи которые можно исправить прямо сейчас.</div>
+    </div>
+  </div>
+
+  <div class="block b-content">
+    <div class="block-header">
+      <span class="block-icon">💡</span>
+      <span class="block-title">Блок 1 — Свет</span>
+    </div>
+    <div class="block-body">
+      <p>Свет — это 70% качества картинки. Правила которые работают всегда:</p>
+      <ul class="tips-list">
+        <li>Снимай лицом к окну, а не спиной к нему</li>
+        <li>Снимаешь вечером — кольцевая лампа или LED-панель, не потолочный свет</li>
+        <li>Избегай смешанного света — либо дневной, либо искусственный</li>
+      </ul>
+      <div class="pain-close">Один правильно выставленный источник света делает картинку дороже любого фильтра. И это не про бюджет — это про знание.</div>
+    </div>
+  </div>
+
+  <div class="block b-content">
+    <div class="block-header">
+      <span class="block-icon">🌸</span>
+      <span class="block-title">Блок 2 — Декор и атмосфера</span>
+    </div>
+    <div class="block-body">
+      <p>Атмосфера — то что зритель чувствует за первые секунды. Не нужно много:</p>
+      <ul class="tips-list">
+        <li>Чистый однотонный фон или аккуратная полка</li>
+        <li>Один акцентный элемент — свеча, цветок, красивая упаковка</li>
+        <li>Продукт Tashe в кадре должен быть главным героем</li>
+      </ul>
+      <p>Посмотри на топовые бьюти-видео в TikTok — там всегда минимализм, а не хаос.</p>
+    </div>
+  </div>
+
+  <div class="block b-content">
+    <div class="block-header">
+      <span class="block-icon">🎬</span>
+      <span class="block-title">Блок 3 — Монтаж и динамика</span>
+    </div>
+    <div class="block-body">
+      <p>TikTok любит движение:</p>
+      <ul class="tips-list">
+        <li>Меняй план каждые 2-3 секунды</li>
+        <li>Используй переходы в такт музыке</li>
+        <li>Снимай вертикально 9:16 — горизонтальное видео теряет охваты</li>
+      </ul>
+      <p>И главное — не снимай одним дублём. Нарезка из нескольких кадров всегда смотрится живее.</p>
+    </div>
+  </div>
+
+  <div class="block b-final">
+    <div class="block-header">
+      <span class="block-icon">🚀</span>
+      <span class="block-title">Финал — активация кабинета</span>
+      <span class="block-time">20–30 сек</span>
+    </div>
+    <div class="block-body">
+      <p>Теперь у тебя есть всё для старта. Но старт — это не момент когда ты всё знаешь. Это момент когда ты понимаешь какие шаги нужно сделать на пути к цели.</p>
+      <p>В Контент Лаб тебя ждут:</p>
+      <div class="ugclab-features">
+        <div class="ugclab-feature">
+          <span class="feat-icon">🎮</span>
+          <div class="feat-title">Задания в боте</div>
+          <div class="feat-desc">Конкретные форматы, прогресс и реальные продукты Tashe в награду</div>
+        </div>
+        <div class="ugclab-feature">
+          <span class="feat-icon">🤝</span>
+          <div class="feat-title">Закрытый чат</div>
+          <div class="feat-desc">Креаторы поддерживают друг друга — особенно когда что-то пошло не так</div>
+        </div>
+        <div class="ugclab-feature">
+          <span class="feat-icon">📲</span>
+          <div class="feat-title">ТГ-канал</div>
+          <div class="feat-desc">Тренды и вдохновение каждую неделю</div>
+        </div>
+      </div>
+      <p style="margin-top:16px">Это твой первый шаг в UGC — и первый реальный кейс с крупным брендом для твоего портфолио.</p>
+      <p><strong>Активируй личный кабинет и начни прямо сейчас! 🚀</strong></p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <strong>UGC Lab · Tashe Professional · Flario</strong><br>
+  Документ для внутреннего использования · 2025
+</div>
+
+</body>
+</html>
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
