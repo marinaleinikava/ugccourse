@@ -466,7 +466,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
 .learn .stage{position:relative;display:grid;place-items:center;padding:20px 0}
 .learn .stage{overflow:visible}
 .learn .stage .blob{position:absolute;width:480px;max-width:none;opacity:1;z-index:0;top:50%;left:50%;animation:blobFloat 8s ease-in-out infinite}
-.learn .stage .phone{z-index:1;transform:translateY(-22px) rotate(-3deg)}
+.learn .stage .phone{z-index:1;transform:translateY(-36px) rotate(-3deg)}
 .sticker{position:absolute;z-index:2;background:#fff;border-radius:14px;padding:8px 12px;font:700 13px/1.25 var(--sans);box-shadow:0 10px 24px rgba(26,17,24,.14);color:var(--ink);white-space:nowrap}
 .sticker.b{background:var(--berry);color:#fff}
 .sticker.p{background:var(--pink);color:var(--berry)}
@@ -507,7 +507,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
 .act{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border-radius:14px;padding:12px 14px;font:600 14.5px/1.3 var(--sans)}
 .act .plus{flex:none;padding:5px 10px;border-radius:999px;background:var(--pink);color:var(--berry);font:800 13px var(--sans);display:inline-flex;gap:4px;align-items:center}
 .act .st{flex:none;font:700 12px var(--sans);padding:5px 10px;border-radius:999px;background:var(--bg);color:var(--gray)}
-.reset{margin-top:16px;display:flex;gap:14px;align-items:center;background:#fff;border-radius:var(--r);padding:16px;box-shadow:0 10px 30px rgba(26,17,24,.06)}
+.reset{margin-top:0;display:flex;gap:14px;align-items:center;background:#fff;border-radius:var(--r);padding:16px;box-shadow:0 10px 30px rgba(26,17,24,.06)}
 .reset .cal{flex:none;width:56px;height:56px;border-radius:16px;background:transparent;display:grid;place-items:center;overflow:visible}
 .reset .cal img{width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(175,0,78,.2))}
 .reset p{font-size:14.5px;color:var(--gray)}
@@ -515,10 +515,10 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
 .vitrine{display:grid;place-items:center;position:relative}
 .vitrine{overflow:visible}
 .vitrine .blob{position:absolute;width:480px;max-width:none;z-index:0;top:50%;left:50%;animation:blobFloat 8.6s ease-in-out .4s infinite}
-.vitrine .phone{z-index:1;transform:translateY(-22px) rotate(3deg)}
+.vitrine .phone{z-index:1;transform:translateY(-36px) rotate(3deg)}
 
 /* ---------- INSIDE (home mockup) ---------- */
-.inside{background:#fff;border-radius:32px;overflow:hidden;padding-bottom:8px}
+.inside{background:#fff;border-radius:32px;overflow:hidden;padding:0 0 36px}
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .tabs button{appearance:none;border:0;cursor:pointer;padding:9px 16px;border-radius:999px;background:var(--bg);font:700 14px var(--sans);color:var(--gray);transition:background .2s,color .2s,transform .2s}
 .tabs button:active{transform:scale(.96)}
@@ -532,11 +532,11 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
 .panel .learn,.panel .prizes{background:none;border-radius:0}
 .panel .learn-grid,.panel .prize-split{margin-top:14px}
 .panel>.lead{margin-bottom:6px}
-.panel .ph-l{transform:translateY(-22px) rotate(-3deg)}
+.panel .ph-l{transform:translateY(-36px) rotate(-3deg)}
 .panel .feats,.panel .script,.panel .note,.panel .legend,.panel .layers{position:relative;z-index:1}
 .inside-grid{display:grid;gap:18px;margin-top:6px;align-items:start}
 .mock-stage{position:relative;display:grid;place-items:center;padding:0 0 8px;overflow:visible}
-.mock-stage .phone{z-index:1;transform:translateY(-22px) rotate(3deg)}
+.mock-stage .phone{z-index:1;transform:translateY(-36px) rotate(3deg)}
 .mock-stage .blob{position:absolute;width:480px;max-width:none;z-index:0;opacity:1;top:50%;left:50%;animation:blobFloat 7.8s ease-in-out .8s infinite}
 .app{background:var(--bg);font-family:var(--sans);color:var(--ink);padding:38px 12px 0;position:relative;display:flex;flex-direction:column;gap:8px}
 .app .hi{display:flex;align-items:center;justify-content:space-between;font:800 15px var(--sans)}
@@ -643,21 +643,23 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
   @keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-16px) rotate(3deg)}}
   @keyframes blobFloat{0%,100%{transform:translate(-50%,-50%) translateY(0) rotate(-3deg)}50%{transform:translate(-50%,-50%) translateY(-18px) rotate(4deg)}}
   .trio{grid-template-columns:repeat(3,1fr)}
-  .learn-grid,.inside-grid{grid-template-columns:1fr 1fr;gap:48px}
-  .inside-grid{align-items:start;margin-top:4px}
-  .inside-grid{align-items:center}
-  .inside-grid .legend{margin-top:0}
-  .inside-grid .mock-stage{margin-top:-8px;padding:4px 0 28px}
-  .learn-grid .stage{order:2}
+  .panel.active{display:grid;grid-template-columns:1.05fr .95fr;column-gap:32px;align-items:start;padding-bottom:8px}
+  .panel>h2{grid-column:1;grid-row:1;margin-top:8px;margin-bottom:8px;white-space:nowrap;font-size:36px;letter-spacing:-.02em}
+  .panel>.lead{grid-column:1;grid-row:2;margin-bottom:10px}
+  .panel .inside-grid,.panel .learn,.panel .learn-grid,.panel .prizes,.panel .prize-split{display:contents}
+  .panel .legend,.panel .learn-grid>div:not(.stage),.panel .layers{grid-column:1;grid-row:3}
+  .panel .mock-stage,.panel .learn .stage,.panel .vitrine{grid-column:2;grid-row:1/span 3;margin-top:8px;padding:0;align-self:start}
+  .panel .mock-stage .phone,.panel .vitrine .phone{transform:rotate(3deg)}
+  .panel .learn .stage .phone,.panel .ph-l{transform:rotate(-3deg)}
   .learn .stage .blob,.vitrine .blob,.mock-stage .blob{width:480px}
-  .prize-split{grid-template-columns:1.05fr .95fr;gap:40px}
-  .layers{grid-template-columns:1fr}
+  .layers{grid-template-columns:1fr;gap:12px}
   .phone{width:290px}
   .revs{grid-template-columns:repeat(3,1fr);align-items:start}
   .steps{grid-template-columns:repeat(2,1fr)}
   .final .hero{display:block}
   .final .flarik{width:190px}
   .brands .box,.reviews .box{padding:40px}
+  .reviews h2 i{display:inline}
   .brands ul{grid-template-columns:repeat(3,1fr)}
 }
 
@@ -704,6 +706,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
   .prize-split .vitrine{order:-1;margin:4px 0 12px}
   .learn .stage .phone,.panel .ph-l{transform:rotate(-3deg)}
   .vitrine .phone,.mock-stage .phone{transform:rotate(3deg)}
+  .panel .legend,.panel .feats,.panel .script,.panel .note,.panel .layers{display:none}
 }
 @media (max-width:430px){
   .sticker,.callout{display:none}
@@ -804,7 +807,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
       </div>
       <div class="panels" id="panels">
       <div class="panel active" id="panel-home" role="tabpanel" aria-labelledby="tab-home">
-        <h2>Главная — <i>всё на&nbsp;одном экране</i></h2>
+        <h2>Баланс, призы, задания — <i>всё на&nbsp;одном экране</i></h2>
         <p class="lead">Твой центр управления: Фларики, рейтинг и&nbsp;задания на&nbsp;день. Всё на&nbsp;одном экране, чтобы ничего не&nbsp;пропустить.</p>
         <div class="inside-grid">
         <div class="legend">
@@ -851,7 +854,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
       </div>
       <div class="panel" id="panel-prizes" role="tabpanel" aria-labelledby="tab-prizes">
         <h2>Два уровня призов — <i>оба для&nbsp;тебя</i></h2>
-        <p class="lead">Основные призы по&nbsp;итогам месяца и&nbsp;бонусные подарки за&nbsp;выполнение специальных миссий.</p>
+        <p class="lead">Розыгрыш 50 бьюти-боксов каждый месяц и&nbsp;бонусные призы за&nbsp;выполнение специальных миссий.</p>
         <div class="prizes"><div class="prize-split">
       <div class="layers">
         <article class="layer month rv">
@@ -885,7 +888,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
     </div></div>
       </div>
       <div class="panel" id="panel-profile" role="tabpanel" aria-labelledby="tab-profile">
-        <h2>Профиль — <i>всё о&nbsp;тебе в&nbsp;одном месте</i></h2>
+        <h2>Вся важная информация — <i>в&nbsp;одном месте</i></h2>
         <p class="lead">Личные данные, начисления, заказы и&nbsp;связь с&nbsp;поддержкой — в&nbsp;одной вкладке.</p>
         <div class="inside-grid">
         <div class="legend">
@@ -915,7 +918,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
     <div class="revs">
       <blockquote class="rev rv">
         <span class="q">“</span>
-        <p>Круто, что&nbsp;есть скрипты по&nbsp;продажам, можно выцепить что-то новое для&nbsp;работы.</p>
+        <p>Круто что&nbsp;есть скрипты по&nbsp;продажам, можно выцепить что-то новое для&nbsp;работы.</p>
         <footer>Дарья, внешний консультант, Золотое Яблоко</footer>
       </blockquote>
       <blockquote class="rev rv"><span class="q">“</span>
@@ -924,7 +927,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
       </blockquote>
       <blockquote class="rev rv">
         <span class="q">“</span>
-        <p>Удобно узнавать свойства и&nbsp;в&nbsp;целом информацию о&nbsp;продуктах и&nbsp;брать для&nbsp;себя на&nbsp;заметку.</p>
+        <p>Нравится узнавать свойства и&nbsp;в&nbsp;целом информацию о&nbsp;продуктах и&nbsp;брать для&nbsp;себя на&nbsp;заметку.</p>
         <footer>Ольга, консультант-кассир, ЛЭтуаль</footer>
       </blockquote>
     </div>
