@@ -521,8 +521,8 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
 
 /* ---------- INSIDE (home mockup) ---------- */
 .inside{background:#fff;border-radius:32px;overflow:hidden;padding:16px 18px 36px}
-.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.tabs button{appearance:none;border:0;cursor:pointer;padding:9px 16px;border-radius:999px;background:var(--bg);font:700 14px var(--sans);color:var(--gray);transition:background .2s,color .2s,transform .2s}
+.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+.tabs button{appearance:none;border:0;cursor:pointer;width:100%;padding:9px 8px;border-radius:999px;background:var(--bg);font:700 14px var(--sans);color:var(--gray);text-align:center;white-space:nowrap;transition:background .2s,color .2s,transform .2s}
 .tabs button:active{transform:scale(.96)}
 .tabs button.on{background:var(--berry);color:#fff}
 .tabs button:focus-visible{outline:2px solid var(--berry);outline-offset:2px}
@@ -693,11 +693,11 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
   h2{font-size:clamp(26px,8vw,34px);margin:10px 0 10px}
   .lead{font-size:15px}
   .hero{padding:20px 16px 0;border-radius:22px}
-  .hero-sec .hero{display:grid;grid-template-columns:minmax(0,1fr) 92px;column-gap:10px;align-items:start}
+  .hero-sec .hero{display:grid;grid-template-columns:minmax(0,1fr) 92px;column-gap:10px;align-items:start;padding:20px 16px 28px}
   .hero-sec .copy{display:contents}
-  .hero-sec h1{grid-column:1;grid-row:1;font-size:clamp(24px,7vw,32px);margin-top:0;padding-right:0}
-  .hero-sec h1 i{font-size:clamp(18px,5.2vw,22px);margin-top:4px}
-  .hero-sec .sub{grid-column:1/-1;font-size:14.5px}
+  .hero-sec h1{grid-column:1;grid-row:1;font-size:clamp(28px,8.2vw,36px);margin-top:0;padding-right:0;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;align-self:stretch;min-height:92px}
+  .hero-sec h1 i{font-size:clamp(18px,5.2vw,22px);margin-top:0}
+  .hero-sec .sub{grid-column:1/-1;font-size:14.5px;margin-top:10px}
   .hero-sec .sub-l1{white-space:normal}
   .hero-sec .lead{grid-column:1/-1;font-size:14.5px;margin:12px 0 16px}
   .hero-sec .ctas{grid-column:1/-1}
@@ -724,14 +724,13 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
   .inside{padding:16px 18px 0}
   .reviews h2{white-space:nowrap;font-size:clamp(22px,6.4vw,28px)}
   .tabs{gap:6px}
-  .tabs span{padding:7px 12px;font-size:13px}
+  .tabs button{padding:8px 4px;font-size:13px}
   .mod{padding:14px 14px}
   .panels{display:flex;align-items:flex-start;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;margin:0 -18px;touch-action:pan-x}
   .panels::-webkit-scrollbar{display:none}
   .panel,.panel.active{display:block;flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;padding:0 18px 6px;box-sizing:border-box;animation:none;scroll-snap-stop:normal}
-  .tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:12px -18px 0;padding:0 18px}
-  .tabs::-webkit-scrollbar{display:none}
-  .tabs button{flex:none}
+  .tabs{margin:12px 0 0;padding:0}
+  .tabs button{flex:unset}
   .inside-nav{display:grid;place-items:center;position:absolute;z-index:4;top:400px;width:32px;height:32px;border:0;border-radius:50%;background:#fff;color:var(--berry);box-shadow:0 6px 18px rgba(26,17,24,.14);cursor:pointer;padding:0}
   .inside-nav svg{width:14px;height:14px;display:block}
   .inside-nav.prev{left:4px}
@@ -767,7 +766,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
             <div class="copy">
         </span>
         <h1 class="rise d1"><span class="h1-keep">Flario Game</span> <i>твой карманный помощник</i></h1>
-        <p class="sub rise d2"><span class="sub-l1">Прокачивай знания по&nbsp;продуктам Limba и&nbsp;Tashe через короткие гайды и&nbsp;квизы,</span><br> зарабатывай бонусы и&nbsp;выигрывай подарки каждый&nbsp;месяц.</p>
+        <p class="sub rise d2"><span class="sub-l1">Прокачивай знания по&nbsp;продуктам Limba и&nbsp;Tashe через короткие гайды и&nbsp;квизы,</span> зарабатывай бонусы и&nbsp;выигрывай подарки каждый&nbsp;месяц.</p>
         <div class="ctas rise d4">
           <a class="btn btn-cream" href="https://beauty-game-app.flario.tech" target="_blank" rel="noopener noreferrer">Открыть приложение</a>
           <a class="btn btn-ghost" href="#prizes">Посмотреть призы</a>
@@ -840,7 +839,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
       <button type="button" class="inside-nav next" id="inside-next" aria-label="Следующий раздел"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
       <div class="panels" id="panels">
       <div class="panel active" id="panel-home" role="tabpanel" aria-labelledby="tab-home">
-        <h2>Баланс, призы, задания — <i>всё на&nbsp;одном экране</i></h2>
+        <h2>Баланс, призы, задания&nbsp;— <i>всё на&nbsp;одном экране</i></h2>
         <p class="lead">Твой центр управления: Фларики, рейтинг и&nbsp;задания на&nbsp;день. Всё на&nbsp;одном экране, чтобы ничего не&nbsp;пропустить.</p>
         <div class="inside-grid">
         <div class="legend">
@@ -886,7 +885,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
     </div></div>
       </div>
       <div class="panel" id="panel-prizes" role="tabpanel" aria-labelledby="tab-prizes">
-        <h2>Призы месяца и&nbsp;бонусы за&nbsp;активность — <i>и все для&nbsp;тебя</i></h2>
+        <h2>Призы и&nbsp;бонусы каждый месяц — <i>и все для&nbsp;тебя</i></h2>
         <p class="lead">Розыгрыш 50 бьюти-боксов каждый месяц и&nbsp;бонусные призы за&nbsp;выполнение специальных миссий.</p>
         <div class="prizes"><div class="prize-split">
       <div class="layers">
@@ -922,7 +921,7 @@ h2 i{display:block;font-weight:400;color:var(--berry)}
       </div>
       <div class="panel" id="panel-profile" role="tabpanel" aria-labelledby="tab-profile">
         <h2>Вся важная информация — <i>в&nbsp;одном месте</i></h2>
-        <p class="lead">Личные данные, начисления, заказы и&nbsp;связь с&nbsp;поддержкой — в&nbsp;одной вкладке.</p>
+        <p class="lead">Статус профиля, личные данные, история начислений, заказы и&nbsp;связь с&nbsp;поддержкой — в&nbsp;одной вкладке.</p>
         <div class="inside-grid">
         <div class="legend">
           <div class="card rv"><span class="k" style="background:var(--berry);color:#fff">1</span><div><h3>Личные данные</h3><p>Имя, магазин и&nbsp;город. Статус «Верифицирована» появляется после проверки бейджа модератором.</p></div></div>
